@@ -29,7 +29,7 @@ export const Tabs = () => {
       </div>
 
       <div className="block" data-cy="TabContent">
-        {selectedTab ? selectedTab.content : 'Select a tab'}
+        {selectedTab ? selectedTab.content : 'Please select a tab'}
       </div>
     </>
   );

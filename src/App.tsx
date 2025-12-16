@@ -1,7 +1,7 @@
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import Tabs from './componenets/Tabs';
 import { Home } from './componenets/Home';
 import { NotFoundPage } from './componenets/NotFoundPage';
@@ -15,12 +15,22 @@ export const App = () => (
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item is-active">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `navbar-item ${isActive ? 'is-active' : ''}`
+            }
+          >
             Home
-          </Link>
-          <Link to="/tabs" className="navbar-item">
+          </NavLink>
+          <NavLink
+            to="/tabs"
+            className={({ isActive }) =>
+              `navbar-item ${isActive ? 'is-active' : ''}`
+            }
+          >
             Tabs
-          </Link>
+          </NavLink>
         </div>
       </div>
     </nav>
